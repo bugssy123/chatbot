@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Website - Services</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #19b824;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header-container {
+            display: flex;
+            align-items: center; /* Align logo and text vertically */
+            justify-content: flex-start; /* Align items to the left */
+        }
+        .logo {
+            width: 60px; /* Adjust size as needed */
+            height: auto;
+            margin-right: 15px; /* Space between logo and text */
+        }
+        nav {
+            background-color: #f8f9fa00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            flex: 1; /* Pushes the footer down */
+            opacity: 0.8; /* Keeps existing transparency */
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #00000091;
+            color: white;
+        }
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .services-list li {
+            margin: 10px 0;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo{
+        width: 60px; /* Adjust size as needed */
+        height: auto;
+        margin-right: 15px; /* Adds spacing between logo and text */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('landmark.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Adding an overlay for better text contrast */
+        body::before {
+            content: "";
+            position: fixed; /* Ensures the background stays fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior="scroll" direction="left" style="background-color: #12c009; color: black; padding: 10px; font-weight: bold;">
+        🔔 Latest Announcement: Barangay Assembly on April 10, 2025 | Free Medical Check-up on April 15, 2025 | Stay Updated with Barangay Bucandala 1!
+    </marquee>
+   
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a> <!-- Added FAQ link -->
+    </nav>
+    
+    <div class="content">
+        <h2>Our Services</h2>
+        <ul class="services-list">
+            <li>Barangay Clearance</li>
+            <li>Certificate of Residency</li>
+            <li>Community Projects</li>
+            <li>Health Services</li>
+            <li>Public Assistance</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 BARANGAY BUCANDALA 1. All rights reserved.</p>
+    </div>    
+</body>
+</html>
