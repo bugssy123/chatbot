@@ -18,13 +18,13 @@
         }
         .header-container {
             display: flex;
-            align-items: center; /* Align logo and text vertically */
-            justify-content: flex-start; /* Align items to the left */
+            align-items: center;
+            justify-content: flex-start;
         }
         .logo {
-            width: 60px; /* Adjust size as needed */
+            width: 60px;
             height: auto;
-            margin-right: 15px; /* Space between logo and text */
+            margin-right: 15px;
         }
         nav {
             background-color: #f8f9fa00;
@@ -39,8 +39,8 @@
             font-weight: bold;
         }
         .content {
-            flex: 1; /* Pushes the footer down */
-            opacity: 0.8; /* Keeps existing transparency */
+            flex: 1;
+            opacity: 0.8;
             padding: 20px;
             background-color: #f1f1f1;
         }
@@ -63,11 +63,20 @@
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
-        .logo{
-        width: 60px; /* Adjust size as needed */
-        height: auto;
-        margin-right: 15px; /* Adds spacing between logo and text */
+        .service-form {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
         }
         body {
             font-family: Arial, sans-serif;
@@ -76,10 +85,9 @@
             position: relative;
         }
 
-        /* Adding an overlay for better text contrast */
         body::before {
             content: "";
-            position: fixed; /* Ensures the background stays fixed */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -94,27 +102,190 @@
         🔔 Latest Announcement: Barangay Assembly on April 10, 2025 | Free Medical Check-up on April 15, 2025 | Stay Updated with Barangay Bucandala 1!
     </marquee>
    
-
     <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="faq.html">FAQ</a> <!-- Added FAQ link -->
+        <a href="faq.html">FAQ</a>
     </nav>
     
     <div class="content">
         <h2>Our Services</h2>
         <ul class="services-list">
-            <li>Barangay Clearance</li>
-            <li>Certificate of Residency</li>
-            <li>Community Projects</li>
-            <li>Health Services</li>
-            <li>Public Assistance</li>
+            <!-- Barangay Clearance -->
+            <li onclick="toggleForm('formBarangayClearance')">
+                Barangay Clearance
+            </li>
+            <div id="formBarangayClearance" class="service-form">
+                <form>
+                    <div class="form-group">
+                        <label for="fullNameBarangayClearance">Full Name (First, Middle, Last)</label>
+                        <input type="text" class="form-control" id="fullNameBarangayClearance" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirthBarangayClearance">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirthBarangayClearance">
+                    </div>
+                    <div class="form-group">
+                        <label for="addressBarangayClearance">Address (Current residence in the barangay)</label>
+                        <input type="text" class="form-control" id="addressBarangayClearance" placeholder="Enter your address">
+                    </div>
+                    <div class="form-group">
+                        <label for="govIDBarangayClearance">Government-issued ID (e.g., Driver's License, Passport, or Postal ID)</label>
+                        <input type="text" class="form-control" id="govIDBarangayClearance" placeholder="Enter ID number">
+                    </div>
+                    <div class="form-group">
+                        <label for="purposeBarangayClearance">Purpose of Clearance (e.g., employment, business, travel, loan application, etc.)</label>
+                        <input type="text" class="form-control" id="purposeBarangayClearance" placeholder="Enter the purpose">
+                    </div>
+                    <div class="form-group">
+                        <label for="civilStatusBarangayClearance">Civil Status (Single, Married, Widowed, or Divorced)</label>
+                        <select class="form-control" id="civilStatusBarangayClearance">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="divorced">Divorced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="proofBarangayClearance">Proof of Residency (e.g., Barangay Certificate of Residency)</label>
+                        <input type="text" class="form-control" id="proofBarangayClearance" placeholder="Enter proof of residency">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+
+            <!-- Certificate of  Indigency -->
+            <li onclick="toggleForm('formCertificateOfIndigency')">
+                Certificate of Indigency
+            </li>
+            <div id="formCertificateOfIndigency" class="service-form">
+                <form>
+                    <div class="form-group">
+                        <label for="fullNameIndigency">Full Name (First, Middle, Last)</label>
+                        <input type="text" class="form-control" id="fullNameIndigency" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirthIndigency">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirthIndigency">
+                    </div>
+                    <div class="form-group">
+                        <label for="addressIndigency">Address (Current residential address)</label>
+                        <input type="text" class="form-control" id="addressIndigency" placeholder="Enter your address">
+                    </div>
+                    <div class="form-group">
+                        <label for="civilStatusIndigency">Civil Status (Single, Married, Widowed, or Divorced)</label>
+                        <select class="form-control" id="civilStatusIndigency">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="divorced">Divorced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupationIndigency">Occupation (If employed, state job; if not, indicate unemployment)</label>
+                        <input type="text" class="form-control" id="occupationIndigency" placeholder="Enter occupation">
+                    </div>
+                    <div class="form-group">
+                        <label for="monthlyIncomeIndigency">Monthly Income (If any, specify the amount)</label>
+                        <input type="number" class="form-control" id="monthlyIncomeIndigency" placeholder="Enter monthly income">
+                    </div>
+                    <div class="form-group">
+                        <label for="proofResidencyIndigency">Proof of Residency (Barangay Certificate of Residency)</label>
+                        <input type="text" class="form-control" id="proofResidencyIndigency" placeholder="Enter proof of residency">
+                    </div>
+                    <div class="form-group">
+                        <label for="govIDIndigency">Valid Government-issued ID (e.g., Driver’s License, Postal ID)</label>
+                        <input type="text" class="form-control" id="govIDIndigency" placeholder="Enter government-issued ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="spouseNameIndigency">Name of Spouse (If applicable)</label>
+                        <input type="text" class="form-control" id="spouseNameIndigency" placeholder="Enter spouse name">
+                    </div>
+                    <div class="form-group">
+                        <label for="numDependentsIndigency">Number of Dependents (If any)</label>
+                        <input type="number" class="form-control" id="numDependentsIndigency" placeholder="Enter number of dependents">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+
+
+            <li onclick="toggleForm('formCertificateOfResidency')">
+                Certificate of Residency
+            </li>
+            <div id="formCertificateOfResidency" class="service-form">
+                <form>
+                    <div class="form-group">
+                        <label for="fullNameResidency">Full Name (First, Middle, Last)</label>
+                        <input type="text" class="form-control" id="fullNameResidency" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirthResidency">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirthResidency">
+                    </div>
+                    <div class="form-group">
+                        <label for="addressResidency">Complete Address (Current residence in the barangay)</label>
+                        <input type="text" class="form-control" id="addressResidency" placeholder="Enter your address">
+                    </div>
+                    <div class="form-group">
+                        <label for="govIDResidency">Government-issued ID (e.g., Driver’s License, Passport, Postal ID)</label>
+                        <input type="text" class="form-control" id="govIDResidency" placeholder="Enter government-issued ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="proofResidency">Proof of Residency (Additional proof may be required, such as utility bills or lease agreements)</label>
+                        <input type="text" class="form-control" id="proofResidency" placeholder="Enter proof of residency">
+                    </div>
+                    <div class="form-group">
+                        <label for="businessDetailsResidency">Barangay Business or Employment Details (If applicable, such as business address or employer’s name)</label>
+                        <input type="text" class="form-control" id="businessDetailsResidency" placeholder="Enter business or employer details">
+                    </div>
+                    <div class="form-group">
+                        <label for="purposeResidency">Purpose of Certificate (e.g., to apply for a job, business permit, or legal document)</label>
+                        <input type="text" class="form-control" id="purposeResidency" placeholder="Enter purpose of certificate">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+
+            <!-- Barangay Id -->
+            <li onclick="toggleForm('formPublicAssistance')">
+                Barangay Id
+            </li>
+            <div id="formPublicAssistance" class="service-form">
+                <form>
+                    <div class="form-group">
+                        <label for="namePublicAssistance">Full Name</label>
+                        <input type="text" class="form-control" id="namePublicAssistance" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPublicAssistance">Contact Number</label>
+                        <input type="text" class="form-control" id="contactPublicAssistance" placeholder="Enter contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="datePublicAssistance">Preferred Appointment Date</label>
+                        <input type="date" class="form-control" id="datePublicAssistance">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
         </ul>
     </div>
+
     <div class="footer">
         <p>&copy; 2025 BARANGAY BUCANDALA 1. All rights reserved.</p>
-    </div>    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function toggleForm(formId) {
+            const form = document.getElementById(formId);
+            // Toggle visibility: If it's already visible, hide it. If not, show it.
+            form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+        }
+    </script>
 </body>
 </html>
