@@ -6,44 +6,48 @@
     <title>Barangay Clearance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="image/imus-logo.png">
-    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
-
     <!-- Header and Navigation -->
     <div style="background-color: #0056b3; color: white; display: flex; justify-content: space-between; align-items: center; padding: 5px 20px; font-family: Arial, sans-serif; font-size: 14px;">
-        <div>
-          <strong>GOVPH</strong> | The Official Website of Barangay Bucandala 1, Imus Cavite
-        </div>
+        <div><strong>GOVPH</strong> | The Official Website of Barangay Bucandala 1, Imus Cavite</div>
         <div style="display: flex; align-items: center; gap: 15px;">
-          <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
-          <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
-          <a href="tel:+464025614" style="color: white;"><i class="fas fa-phone-alt"></i></a>
-          <span id="dateTimePH"></span>
+            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="tel:+464025614" style="color: white;"><i class="fas fa-phone-alt"></i></a>
+            <span id="dateTimePH"></span>
         </div>
-      </div>
+    </div>
 
-      <nav>
+    <nav>
         <a href="index.html">Home</a>
         <div class="dropdown">
-          <a href="#" class="dropbtn">Services ▾</a>
-          <div class="dropdown-content">
-            <a href="barangay-clearance.html">Barangay Clearance</a>
-            <a href="certificate-of-indigency.html">Certificate of Indigency</a>
-            <a href="certificate-of-residency.html">Certificate of Residency</a>
-            <a href="barangay-id.html">Barangay ID</a>
-          </div>
+            <a href="#" class="dropbtn">Services ▾</a>
+            <div class="dropdown-content">
+                <a href="barangay-clearance.html">Barangay Clearance</a>
+                <a href="certificate-of-indigency.html">Certificate of Indigency</a>
+                <a href="certificate-of-residency.html">Certificate of Residency</a>
+                <a href="barangay-id.html">Barangay ID</a>
+            </div>
         </div>
-      
-        <a href="contact.html">Contact</a>
-        <a href="faq.html">FAQ</a>
-      </nav>
+        <a href="contact.html">About</a>
+        <a href="faq.html">FAQs</a>
+    </nav>
+
+    <!-- Cover Photo -->
+    <div style="width: 100%; height: 300px; overflow: hidden; opacity: 0.6;">
+        <img src="image/duduy.jpg" alt="Cover Photo" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
 
     <div class="container-fluid px-5 py-4">
         <h2 class="text-center mb-4">Barangay Clearance Form</h2>
-        <form>
+
+        <!-- Form -->
+        <form id="myForm">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label>First Name *</label>
@@ -57,12 +61,12 @@
                     <label>Last Name *</label>
                     <input type="text" class="form-control" required>
                 </div>
-    
+
                 <div class="form-group col-md-12">
                     <label>Complete Address *</label>
                     <input type="text" class="form-control" required>
                 </div>
-    
+
                 <div class="form-group col-md-4">
                     <label>Birth Date *</label>
                     <input type="date" class="form-control" required>
@@ -75,11 +79,12 @@
                     <label>Status *</label>
                     <input type="text" class="form-control" required>
                 </div>
-    
+
                 <div class="form-group col-md-4">
-                    <label>Mobile Number *</label>
-                    <input type="text" class="form-control" required>
+                    <label for="mobile-number">Mobile Number *</label>
+                    <input type="tel" class="form-control" id="mobile-number" name="mobile-number" pattern="[0-9]{11}" required placeholder="Enter your 11-digit mobile number" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/\D/g, '')">
                 </div>
+
                 <div class="form-group col-md-4">
                     <label>Years of Stay</label>
                     <input type="text" class="form-control">
@@ -88,7 +93,7 @@
                     <label>Purpose *</label>
                     <input type="text" class="form-control" required>
                 </div>
-    
+
                 <div class="form-group col-md-4">
                     <label>Name of Student / Patient *</label>
                     <input type="text" class="form-control" required>
@@ -101,7 +106,7 @@
                     <label>Relationship *</label>
                     <input type="text" class="form-control" required>
                 </div>
-    
+
                 <div class="form-group col-md-6">
                     <label>Email *</label>
                     <input type="email" class="form-control" required>
@@ -113,29 +118,36 @@
                     </select>
                 </div>
             </div>
-    
+
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary px-5">Send Message</button>
+                <button type="submit" class="btn btn-primary px-5">Submit</button>
             </div>
         </form>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h3>Form successfully submitted!</h3>
+            </div>
+        </div>
     </div>    
 
+    <!-- Footer -->
     <div class="footer">
         <div class="footer-content">
-          <img src="image/imus-logo.png" alt="Barangay Logo" class="footer-logo">
-          <div class="footer-text">
-            <p>Copyright &copy; 2025 The Official Website of Barangay Bucandala 1, Imus Cavite. All Rights Reserved.</p>
-            <p>Bucandala 1 Barangay Hall, Imus, Cavite, Philippines 4103.</p>
-            <p>Call Us Today: +46 40 256 14</p>
-          </div>
+            <img src="image/imus-logo.png" alt="Barangay Logo" class="footer-logo">
+            <div class="footer-text">
+                <p>Copyright &copy; 2025 The Official Website of Barangay Bucandala 1, Imus Cavite. All Rights Reserved.</p>
+                <p>Bucandala 1 Barangay Hall, Imus, Cavite, Philippines 4103.</p>
+                <p>Call Us Today: +46 40 256 14</p>
+            </div>
         </div>
     </div>
 
-    <iframe src="chatbot.html"
-    style="position: fixed; bottom: 10px; right: 10px; width: 340px; height: 800px; border: none; z-index: 999;"> 
-    </iframe>
+    <!-- Chatbot -->
+    <iframe src="chatbot.html" style="position: fixed; bottom: 10px; right: 10px; width: 340px; height: 800px; border: none; z-index: 999;"></iframe>
 
     <script src="js/services.js"></script>
-
 </body>
 </html>
